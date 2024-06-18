@@ -4,42 +4,64 @@
         --container-bg-color:#3e3e42;
         --font-color: white;
 
-
     }
+
+    .bar{
+        font: 25px "Fira Code", monospace;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        align-content: center;
+        border-radius: 40px;
+        box-shadow: 4px 5px 6px #111111, -2px -2px 7px rgba(255, 255, 255, 0.185);
+    }
+
 
 
     body{
         background-color: var(--bg-color);
     }
 
-    .headbar, .clueBar, .footerBar{
+    .headbar{
         margin: 40px;
         display: flex;
-        background-color: var(--container-bg-color);
-        border: 0.1px solid white;
     }
     .headbarItem{
-        font-size: 18px;
-        color: var(--font-color);
         flex: 1;
         padding: 10px;
     }
     .wordleTitle{
-        font: bold 35px "Fira Code", monospace;
+        letter-spacing: 15px;
+        font:  25px "Fira Code", monospace;
         color: var(--font-color);
-        flex: 3;
+        flex: 6;
         padding: 10px;
         text-align: center;
     }
+    .clueBar{
+        margin: auto;
+        margin-bottom: 40px;
+        display: flex;
+        width: 30%;
+        align-items: center;
+        flex-direction: column;
+    }
 
     #Clue{
-        color: var(--font-color);
-        font: 23px bold black;
-        flex: 6;
+        color: coral;
+        font: 50px  "Fira Code", monospace;
+        letter-spacing: 20px;
+        text-align: center;
+        
     }
     #clueReveal{
-        color: var(--font-color);
-        flex: 2;
+        font: 20px "Fira Code", monospace;
+        background-color: coral;
+        color: rgb(32, 32, 32);
+        text-align: center;
+        padding: 5px 20px 5px;
+        align-content: center;
+        border-radius: 40px;
+        box-shadow: 4px 5px 6px #111111, -2px -2px 7px rgba(255, 159, 95, 0.37);
     }
 
     .guessBox{
@@ -64,7 +86,41 @@
         width: 10%;
         text-align: center;
         align-content: center;
-        color: rgb(255, 255, 255);
+        color:rgb(255, 255, 255);
         border-radius: 10%;
         box-shadow: 4px 5px 6px #111111, -2px -2px 7px rgba(255, 255, 255, 0.185);
+    }
+    .textbox:hover{
+        font: bold 20px "Fira Code", monospace;
+        background-color: #00917C ;
+        aspect-ratio: 1;
+        flex: 1;
+        width: 10%;
+        text-align: center;
+        align-content: center;
+        color:rgb(255, 255, 25);
+        border-radius: 10%;
+        box-shadow: 4px 5px 6px #111111, -2px -2px 7px rgba(39, 163, 60, 0.568);
+    }
+    /* no ide why this not changing into red */
+    #box123:hover {
+        font: bold 20px "Fira Code", monospace;
+        background-color:#f1444c;
+        aspect-ratio: 1;
+        flex: 1;
+        width: 10%;
+        text-align: center;
+        align-content: center;
+        color:rgb(255, 255, 25);
+        border-radius: 10%;
+        box-shadow: 4px 5px 6px #111111, -2px -2px 7px #f1444db0;
+    }
+    .footerBar{
+        text-align: center;
+        margin: 40px;
+        color: white;
+        font: 15px "Fira Code", monospace;
+    }
+    .footerBar a{
+        color: white;
     }
