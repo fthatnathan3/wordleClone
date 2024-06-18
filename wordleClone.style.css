@@ -1,0 +1,27 @@
+/* placeholder css for bar item, soon to be change individually */
+
+.headbar, .clueBar, .guessBox, .footerBar{
+    display: flex;
+    background-color: whitesmoke;
+    border: 4px solid black;
+}
+.headbarItem{
+    flex: 1;
+    background-color: brown;
+    padding: 10px;
+    border: wheat 3px solid;
+}
+.wordleTitle{
+    flex: 3;
+    background-color: aqua;
+    padding: 10px;
+    border: purple 4px solid;
+}
+
+#Clue{
+    font: 23px bold black;
+    flex: 6;
+}
+#clueReveal{
+    flex: 2;
+}
