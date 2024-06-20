@@ -1,0 +1,7 @@
+p[data-checkSum="1"]{
+    color: rgb(255, 17, 0);
+}
+
+p[data-checkSum="2"]{
+    color: rgb(0, 167, 83);
+}

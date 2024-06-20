@@ -100,9 +100,9 @@
         align-content: center;
         color:rgb(255, 255, 25);
         border-radius: 10%;
-        box-shadow: 4px 5px 6px #111111, -2px -2px 7px rgba(39, 163, 60, 0.568);
+        box-shadow: 0 0 20px rgba(39, 163, 60, 0.863), inset 0 0 30px rgba(39, 163, 60, 0.568);
     }
-    /* no ide why this not changing into red */
+    /* no ide why this not changing into red. SOLVED */
     #box123:hover {
         font: bold 20px "Fira Code", monospace;
         background-color:#f1444c;
@@ -113,7 +113,8 @@
         align-content: center;
         color:rgb(255, 255, 25);
         border-radius: 10%;
-        box-shadow: 4px 5px 6px #111111, -2px -2px 7px #f1444db0;
+        box-shadow: 0 0 20px #f1444db0, 
+        inset 0 0 30px #f1444db0;
     }
     .footerBar{
         text-align: center;
