@@ -1,7 +1,56 @@
-p[data-checkSum="1"]{
-    color: rgb(255, 17, 0);
-}
 
-p[data-checkSum="2"]{
-    color: rgb(0, 167, 83);
+.col{
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    justify-self: center;
+}
+.textbox{
+    font: bold 20px "Fira Code", monospace;
+    background-color: var(--container-bg-color);
+    aspect-ratio: 1;
+    flex: 1;
+    width: 10%;
+    text-align: center;
+    align-content: center;
+    color:rgb(0, 0, 0);
+    border-radius: 10%;
+    box-shadow: 4px 5px 6px #111111, -2px -2px 7px rgba(255, 255, 255, 0.185);
+}
+.textbox[data-color="green"]{
+    font: bold 20px "Fira Code", monospace;
+    background-color: #00917C ;
+    aspect-ratio: 1;
+    flex: 1;
+    width: 10%;
+    text-align: center;
+    align-content: center;
+    color:rgb(255, 255, 25);
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(39, 163, 60, 0.863), inset 0 0 30px rgba(39, 163, 60, 0.568);
+}
+.textbox[data-color="yellow"]{
+    font: bold 20px "Fira Code", monospace;
+    background-color: #f0d801 ;
+    aspect-ratio: 1;
+    flex: 1;
+    width: 10%;
+    text-align: center;
+    align-content: center;
+    color:rgb(255, 255, 25);
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(39, 163, 60, 0.863), inset 0 0 30px rgba(255, 196, 1, 0.568);
+}
+.textbox[data-color="red"]{
+    font: bold 20px "Fira Code", monospace;
+    background-color: #e40000 ;
+    aspect-ratio: 1;
+    flex: 1;
+    width: 10%;
+    text-align: center;
+    align-content: center;
+    color:rgb(255, 255, 25);
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(39, 163, 60, 0.863), inset 0 0 30px rgba(255, 1, 1, 0.568);
 }
