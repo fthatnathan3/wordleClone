@@ -2,39 +2,41 @@ let answerWord = ['a','p','p','l','e'];
 let userAnswer = [];
 let textboxColor = [];
 let colIndex = 1;
-let rowIndex = -1;
+let rowIndex = 0;
+let isUsrWin = false;
 window.addEventListener("keydown", takeInput);
 let tbox = document.getElementById("test1");
-let textbox = document.querySelectorAll(`#col${colIndex} .textbox`)
-//console.log(tbox.innerText);
+
 
 function takeInput (event,index){
-    rowIndex++; 
+    let textbox = document.querySelectorAll(`#col${colIndex} .textbox`)
     let pressedKey = event.key;
     let keycode = event.keyCode;
 
     if (pressedKey == "Enter"){
-        isEnter();
+        isEnter(textbox);
     }
 
     else if ((keycode >= 65) && (keycode <= 90)) {
+        //only accepting alphabet input
         textbox[rowIndex].textContent=`${pressedKey}`;
         userAnswer[rowIndex] = pressedKey;
         //printOnTextbox(key, event,textbox);
-        console.log("isAlphabet");
+        console.log(userAnswer);
+        rowIndex++; 
     }
    
-    else if (pressedKey === "Backspace"){
-        isBackspace();
+    else if ((pressedKey == "Backspace") && (rowIndex >0)){
+        isBackspace(textbox);
     }
-
+    
 }
 
 function printOnTextbox(key, event, textbox){
     //textbox[rowIndex].innerHTML = (`${key}`);
 }
 
-function isEnter(){
+function isEnter(textbox){
     if (userAnswer.length < 5){
         //notLongEnough();
         console.log("fill the empty box");
@@ -42,16 +44,25 @@ function isEnter(){
     else{
         userAnswer.forEach(checkAnswer); 
         console.log(textboxColor);
-        tBoxColorChange();
+        tBoxColorChange(textbox);
+        colIndex++;
+        userAnswer = [];
+        rowIndex = 0;
+        answerWord = ['a','p','p','l','e'];
+        isWin;
     }
     console.log("isEnter");
     
 }
 
-function isBackspace(){
+function isBackspace(textbox){
+    rowIndex--;
+    textbox[rowIndex].textContent=``;
+    userAnswer.splice(rowIndex,1);
+
     console.log("isBackspace");
 }
-function tBoxColorChange(){
+function tBoxColorChange(textbox){
     textboxColor.forEach((color,index) =>{
         switch (color){
             case "green" :
@@ -70,6 +81,19 @@ function tBoxColorChange(){
     })
 
 }
+
+function isWin() {
+    greenCount;
+    textboxColor.forEach((e) =>{
+        if(e=="green"){
+            greenCount++
+        }  
+    })
+    if (greenCount = 5){
+        isUsrWin = true;
+        console.log("You Win")
+    }
+}
 function checkAnswer(usrAnswer,index){
     answerIndex = index;
     console.log(usrAnswer);
@@ -82,7 +106,7 @@ function checkAnswer(usrAnswer,index){
         {
             isGreen = true;
         }
-        else if ((usrAnswer == ansChar) && (ansChar != 0)) {
+        else if (answerWord.includes(usrAnswer[index])) {
             isYellow = true;
         }
         else if ((ansChar != 0)){
@@ -94,12 +118,10 @@ function checkAnswer(usrAnswer,index){
     if (isGreen){ 
         console.log("green");
         textboxColor[answerIndex] = 'green';
-        answerWord[answerIndex] = 0;
     }
     else if (isYellow){
         console.log("yellow");
         textboxColor[answerIndex] = 'yellow';
-        answerWord[answerIndex] = 0;
     }
     else if (isRed){
         console.log("red");
